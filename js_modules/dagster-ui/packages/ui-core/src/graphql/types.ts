@@ -744,6 +744,7 @@ export enum ChangeReason {
   NEW = 'NEW',
   PARTITIONS_DEFINITION = 'PARTITIONS_DEFINITION',
   TAGS = 'TAGS',
+  METADATA = 'METADATA'
 }
 
 export type ClaimedConcurrencySlot = {
