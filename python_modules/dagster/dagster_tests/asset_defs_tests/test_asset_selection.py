@@ -653,6 +653,17 @@ def test_to_string_basic():
         str(AssetSelection.key_prefixes("marketing", ["foo", "bar"]))
         == "key_prefix:(marketing or foo/bar)"
     )
+    assert (
+        str(AssetSelection.checks(AssetCheckKey(AssetKey("foo"), "bar"))) == "asset_check:foo:bar"
+    )
+    assert (
+        str(
+            AssetSelection.checks(
+                AssetCheckKey(AssetKey("foo"), "bar"), AssetCheckKey(AssetKey("baz"), "qux")
+            )
+        )
+        == "asset_check:(foo:bar or baz:qux)"
+    )
 
 
 def test_to_string_binary_operators():

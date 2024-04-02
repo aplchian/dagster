@@ -600,6 +600,11 @@ class AssetCheckKeysSelection(AssetSelection):
     def to_serializable_asset_selection(self, asset_graph: BaseAssetGraph) -> "AssetSelection":
         return self
 
+    def __str__(self) -> str:
+        if len(self.selected_asset_check_keys) == 1:
+            return f"asset_check:{self.selected_asset_check_keys[0].to_user_string()}"
+        return f"asset_check:({' or '.join(k.to_user_string() for k in self.selected_asset_check_keys)})"
+
 
 @whitelist_for_serdes
 class AndAssetSelection(AssetSelection):
