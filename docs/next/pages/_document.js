@@ -53,7 +53,11 @@ export default class MyDocument extends Document {
               <div>Ask AI</div>
             </div>
           </co-pilot>
-          <script type="module" src="https://ui.scoutos.com/copilot.js"></script>
+          <script
+            type="module"
+            src="https://ui.scoutos.com/copilot.js"
+            style={{fontFeatureSettings: 'normal'}}
+          ></script>
         </Head>
         <body>
           <Main />
